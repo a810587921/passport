@@ -9,7 +9,7 @@
 > This project is in its optimizing stage, while dev-versions may be pre-released. Please avoid using pre-release binary files or container images with 'latest' tag. Choose the release version displayed on the badge shown above for stable usage.
 
 <div align="center">
-  <img src="https://cdn.185610.xyz/assets/passport.png" alt="passport">
+  <img src="https://cdn.yobc.de/assets/passport.png" alt="passport">
 </div>
 
 <h4 align="center">"Access pass required to pass through port."</h4>
@@ -34,21 +34,21 @@
 ### Network Tunneling
 
 <div align="center">
-  <img src="https://cdn.185610.xyz/assets/tunnel.png" alt="tunnel">
+  <img src="https://cdn.yobc.de/assets/tunnel.png" alt="tunnel">
 </div>
 Tunneling establishes seamless access to otherwise unreachable resources. A user’s request is sent to the server, which forwards it through a pre-established TLS-encrypted channel to the client. The client then connects to the target service, creating two secure links: one to the server and another to the target. This enables data exchange between the client and the target, and subsequently between the server and the user. For concurrent user requests, multiple TLS-encrypted connections are established, supporting native high-concurrency performance. Notably, UDP tunneling leverages the same TLS-encrypted TCP channels between the server and client, ensuring security and eliminating latency caused by unsuccessful NAT traversal attempts.
 
 ### Port Forwarding
 
 <div align="center">
-  <img src="https://cdn.185610.xyz/assets/forward.png" alt="forward">
+  <img src="https://cdn.yobc.de/assets/forward.png" alt="forward">
 </div>
 Forwarding simplifies the process by directly relaying user TCP/UDP requests to the target service via a broker. The broker establishes a connection with the target, exchanges data with the service, and returns responses to the user. While this mode supports high concurrency if the user-side supports multithreading, it does not employ TLS encryption. For secure usage, ensure the target service provides its own transmission security.
 
 ### Access Control
 
 <div align="center">
-  <img src="https://cdn.185610.xyz/assets/access.png" alt="access">
+  <img src="https://cdn.yobc.de/assets/access.png" alt="access">
 </div>
 The authentication system employs a secure and dynamic IP whitelisting mechanism designed to manage access control effectively. Verified IP addresses are stored in memory for the duration of the server or broker's runtime, with all entries cleared upon server restart to ensure that no stale or unauthorized IPs remain active. This design prioritizes security by requiring reauthentication after a restart. When a user attempts to access a resource, their IP is checked against the whitelist. If the IP is present, access is granted seamlessly. If the user's IP has changed, or if the IP is not whitelisted, the system blocks access and redirects the user to an authentication URL. Successful authentication not only verifies the user's access but also updates the whitelist by temporarily storing the IP in memory and returning the current IP address to confirm the process. Unauthorized IPs remain blocked until proper authentication is completed. This approach combines real-time validation, adaptability to changing IPs, and enhanced security measures to provide a reliable access control solution.
 
