@@ -6,7 +6,8 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/yosebyte/passport)
 ![GitHub commits since latest release](https://img.shields.io/github/commits-since/yosebyte/passport/latest)
 
-> This project is in its optimizing stage, while dev-versions may be pre-released. Please avoid using pre-release binary files or container images with 'latest' tag. Choose the release version displayed on the badge shown above for stable usage.
+> **Note**  
+> The tunnel functionality of the `passport` project has been separated into a new project called [NodePass](https://github.com/yosebyte/nodepass), which focuses on secure and efficient TCP tunneling. The remaining port forwarding components in `passport` are currently being refactored.
 
 <div align="center">
   <img src="https://cdn.yobc.de/assets/passport.png" alt="passport">
